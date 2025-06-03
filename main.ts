@@ -1,5 +1,6 @@
 // hello world! 
-import inquirer from 'inquirer';
+import inquirer from "/opt/homebrew/lib/node_modules/inquirer";
+
 
 interface UserInterface {
   name: string;
@@ -14,11 +15,16 @@ const User_One: UserInterface = {
 }
 
 function desiresToSpeak() : boolean | null {
-  inquirer
-    .prompt(["Do you want to say something? ([y]es or [n]o)"])
-    .then((answer : any) => {
-      if(answer == 'y'){ return true} else if (answer == 'n') {return false} else { return null} 
-      })
+  inquirer.prompt([
+        {
+          type:'confirm',
+          name:"proceed",
+          message:"Do you want to say something?",
+          default: true
+        }
+    ]).then((answer : any) => {
+        console.log(answer.proceed);      })
+
   return null;
 }
 
@@ -43,6 +49,7 @@ if (answer){
 } else if (answer == false){
   // Nice to talk to you, goodbye!
 } else if (answer == null){
+  console.log("The answer is null");
   // where did you see that option brother? nuh good bye! 
 }
 
