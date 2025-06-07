@@ -55,6 +55,4 @@ if (answer){
 console.log("Couple of funny lines for test")});
 
 
-// Gotta learn async, await, and promise. 
-//
 //add function that adds speech to user
