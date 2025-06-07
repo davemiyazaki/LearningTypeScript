@@ -14,8 +14,8 @@ const User_One: UserInterface = {
   occupation: "Student"
 }
 
-function desiresToSpeak() : boolean | null {
-  inquirer.prompt([
+const desiresToSpeak = async () => {
+    await inquirer.prompt([
         {
           type:'confirm',
           name:"proceed",
@@ -23,9 +23,9 @@ function desiresToSpeak() : boolean | null {
           default: true
         }
     ]).then((answer : any) => {
-        console.log(answer.proceed);      })
+        console.log(answer.proceed);})
 
-  return null;
+  return false;
 }
 
 const displayUserData =(user:UserInterface) => {
@@ -43,16 +43,19 @@ console.log("\n> Hello! Here's your information: \n");
 displayUserData(User_One);
 console.log("\n> What do you think?")
 //asks if user wants to say something
-const answer = desiresToSpeak();
+desiresToSpeak().then((answer)=>{
 if (answer){
    //propose for user to type to speak  
 } else if (answer == false){
+  console.log("It seems to return false");
   // Nice to talk to you, goodbye!
 } else if (answer == null){
   console.log("The answer is null");
   // where did you see that option brother? nuh good bye! 
 }
+console.log("Couple of funny lines for test")});
 
 
-
+// Gotta learn async, await, and promise. 
+//
 //add function that adds speech to user
