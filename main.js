@@ -13,7 +13,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 // hello world! 
-const inquirer_1 = __importDefault(require("/opt/homebrew/lib/node_modules/inquirer"));
+//import inquirer from "/opt/homebrew/lib/node_modules/inquirer";
+const inquirer_1 = __importDefault(require("inquirer"));
 const User_One = {
     name: "David",
     age: 20,

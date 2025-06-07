@@ -1,7 +1,6 @@
 // hello world! 
-import inquirer from "/opt/homebrew/lib/node_modules/inquirer";
-
-
+//import inquirer from "/opt/homebrew/lib/node_modules/inquirer";
+import inquirer from "inquirer"
 interface UserInterface {
   name: string;
   age: number;
